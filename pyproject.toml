@@ -12,6 +12,9 @@ dependencies = [
     "create-agent>=0.0.3",
     "langchain-community>=0.4.2",
     "langchain-chroma>=1.1.0",
+    "tavily>=1.1.0",
+    "langsmith>=0.8.7",
+    "markdownify>=1.2.2",
 ]
 
 [[tool.uv.index]]
