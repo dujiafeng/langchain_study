@@ -9,6 +9,9 @@ dependencies = [
     "jupyter>=1.1.0",
     "langchain-deepseek>=1.0.1",
     "dashscope>=1.25.19",
+    "create-agent>=0.0.3",
+    "langchain-community>=0.4.2",
+    "langchain-chroma>=1.1.0",
 ]
 
 [[tool.uv.index]]
