@@ -15,7 +15,9 @@ dependencies = [
     "tavily>=1.1.0",
     "langsmith>=0.8.7",
     "markdownify>=1.2.2",
-    "jupyterlab-language-pack-zh-cn>=4.5.post3"
+    "jupyterlab-language-pack-zh-cn>=4.5.post3",
+    "langgraph>=1.2.2",
+    "pypdf>=6.13.0",
 ]
 
 [[tool.uv.index]]
