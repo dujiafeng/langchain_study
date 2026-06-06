@@ -18,6 +18,7 @@ dependencies = [
     "jupyterlab-language-pack-zh-cn>=4.5.post3",
     "langgraph>=1.2.2",
     "pypdf>=6.13.0",
+    "mineru-kie-sdk>=0.1.1",
 ]
 
 [[tool.uv.index]]

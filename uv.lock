@@ -746,6 +746,12 @@ wheels = [
 ]
 
 [[package]]
+name = "func-timeout"
+version = "4.3.5"
+source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }
+sdist = { url = "https://pypi.tuna.tsinghua.edu.cn/packages/b3/0d/bf0567477f7281d9a3926c582bfef21bff7498fc0ffd3e9de21811896a0b/func_timeout-4.3.5.tar.gz", hash = "sha256:74cd3c428ec94f4edfba81f9b2f14904846d5ffccc27c92433b8b5939b5575dd", size = 44264, upload-time = "2019-08-19T21:32:07.43Z" }
+
+[[package]]
 name = "google-auth"
 version = "2.53.0"
 source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }
@@ -1602,6 +1608,7 @@ dependencies = [
     { name = "langgraph" },
     { name = "langsmith" },
     { name = "markdownify" },
+    { name = "mineru-kie-sdk" },
     { name = "pypdf" },
     { name = "python-dotenv" },
     { name = "tavily" },
@@ -1621,6 +1628,7 @@ requires-dist = [
     { name = "langgraph", specifier = ">=1.2.2" },
     { name = "langsmith", specifier = ">=0.8.7" },
     { name = "markdownify", specifier = ">=1.2.2" },
+    { name = "mineru-kie-sdk", specifier = ">=0.1.1" },
     { name = "pypdf", specifier = ">=6.13.0" },
     { name = "python-dotenv", specifier = ">=1.1.0" },
     { name = "tavily", specifier = ">=1.1.0" },
@@ -1798,6 +1806,21 @@ source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }
 sdist = { url = "https://pypi.tuna.tsinghua.edu.cn/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz", hash = "sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba", size = 8729, upload-time = "2022-08-14T12:40:10.846Z" }
 wheels = [
     { url = "https://pypi.tuna.tsinghua.edu.cn/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8", size = 9979, upload-time = "2022-08-14T12:40:09.779Z" },
+]
+
+[[package]]
+name = "mineru-kie-sdk"
+version = "0.1.1"
+source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }
+dependencies = [
+    { name = "aiohttp" },
+    { name = "filetype" },
+    { name = "func-timeout" },
+    { name = "requests" },
+]
+sdist = { url = "https://pypi.tuna.tsinghua.edu.cn/packages/32/51/8bd8e9b0a55a51201af46046e80f63d9b392e74c6cd402de64e1038e3a83/mineru_kie_sdk-0.1.1.tar.gz", hash = "sha256:b3fa3eb0dee6f735452e25d3d3c42364dbeaa0cb3d6984ac6e772ecf5fca97ab", size = 9726, upload-time = "2026-01-21T12:04:48.398Z" }
+wheels = [
+    { url = "https://pypi.tuna.tsinghua.edu.cn/packages/e8/fa/b9be2d377bdb4cade5c5304000c4e48d069823d63fb7038305a5afd2223b/mineru_kie_sdk-0.1.1-py3-none-any.whl", hash = "sha256:2418dd15f360ca2bdfa369b202d220171428f1ffa10822b0701679840f2c7123", size = 8615, upload-time = "2026-01-21T12:04:47.046Z" },
 ]
 
 [[package]]
