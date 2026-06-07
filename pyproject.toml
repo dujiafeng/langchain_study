@@ -24,6 +24,7 @@ dependencies = [
     "numpy>=2.4.6",
     "torch>=2.12.0",
     "langgraph-cli>=0.4.27",
+    "langchain-mcp-adapters>=0.2.2",
 ]
 
 [[tool.uv.index]]
