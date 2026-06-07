@@ -6,7 +6,7 @@ LangChain / Deep Agents 学习笔记，基于官方文档整理为 Jupyter Noteb
 
 ## 学习路径
 
-共 10 个阶段，建议按顺序学习。每阶段标注了前置依赖和核心产出。
+共 14 个阶段，建议按顺序学习。每阶段标注了前置依赖和核心产出。
 
 ---
 
@@ -174,6 +174,71 @@ LangChain / Deep Agents 学习笔记，基于官方文档整理为 Jupyter Noteb
 
 ---
 
+### 第十一阶段：LangGraph 核心概念
+
+**目标：** 掌握 LangGraph 的核心概念 — 状态管理、节点、边、条件路由、工具调用与多 Agent。
+
+**前置依赖：** 第一阶段完成。
+
+| 步骤 | Notebook | 核心知识点 | 产出 |
+|:----:|----------|-----------|------|
+| 1 | `LangGraph/01_核心概念与状态管理` | StateGraph 架构、State 定义(TypedDict/MessageState/自定义)、节点与边、图编译 | 理解 LangGraph 状态管理 |
+| 2 | `LangGraph/02_环境搭建与第一个程序` | 环境安装、AgentExecutor vs LangGraph 对比、最简 Agent 构建 | 跑通第一个 LangGraph Agent |
+| 3 | `LangGraph/03_Nodes节点` | `@node` 装饰器、异步节点、节点间通信、State 读写 | 掌握节点定义 |
+| 4 | `LangGraph/04_条件路由示例` | `add_conditional_edges`、路由函数、动态分支 | 实现条件路由 |
+| 5 | `LangGraph/05_ReAct工具调用` | ToolNode、tools_condition、Binding tools、工具执行循环 | 掌握工具调用流程 |
+| 6 | `LangGraph/06_多Agent与子图` | Subgraph 定义、多 Agent 编排、`add_node` / `add_edge` / graph 嵌套 | 构建多 Agent 系统 |
+| 7 | `LangGraph/07_调试与最佳实践` | `interrupt` / `interrupt_before` / `interrupt_after` 断点、状态检查、时间旅行、`get_state` / `update_state` 调试 API | 掌握调试与断点 |
+
+---
+
+### 第十二阶段：LangGraph 进阶实战
+
+**目标：** 掌握 LangGraph 的高级模式 — 常见工作流、思维模式、持久化、流式、HITL 人工审核。
+
+**前置依赖：** 第十一阶段完成。
+
+| 步骤 | Notebook | 核心知识点 | 产出 |
+|:----:|----------|-----------|------|
+| 1 | `langchain_new/05_LangGraph/00_LangGraph` | LangGraph 设计哲学、与 LangChain Agent 对比、StateGraph / MessageGraph、节点/边/条件边、编译执行 | 概念澄清与对比 |
+| 2 | `langchain_new/05_LangGraph/01_常见概念和入门` | State 模式(TypedDict/DataClass/Pydantic)、节点装饰器与函数、Reducer(默认覆盖/自定义)、条件边路由、Checkpoint/Thread 持久化、流式输出(events v3)、Timeout/Retry 容错 | 掌握完整 API |
+| 3 | `langchain_new/05_LangGraph/02_常见WorkFlow` | 7 种工作流模式(Prompt Chaining / Routing / Parallelization / Orchestrator-Worker / Evaluator-Optimizer / 子图嵌套)及代码示例 | 编排任意工作流 |
+| 4 | `langchain_new/05_LangGraph/03_ThinkInLangGraph` | 节点职责分析、State 设计(字段/Reducer)、Command 路由机制、HITL 人工审核(interrupt/resume)、3 种场景测试(正常/异常/边界) — 完整邮件助手案例 | 从头设计 LangGraph 应用 |
+| 5 | `langgraph_new/01_基础` | LangGraph 基础入门、StateGraph 构建、节点与边定义 | 独立补充练习 |
+
+---
+
+### 第十三阶段：Agent 进阶与实战
+
+**目标：** 掌握 LangChain Agent 进阶特性 — Runtime 运行时、Middleware 中间件、MCP 协议、多 Agent 协作、Email Agent 实战。
+
+**前置依赖：** 第一阶段完成。
+
+| 步骤 | Notebook | 核心知识点 | 产出 |
+|:----:|----------|-----------|------|
+| 1 | `langchain_new/03_Agent进阶/01_Runtime` | Runtime 三大组件(Context/State/Store)详解、ToolRuntime 接口、Checkpointer 生命周期、Store KV API、多租户数据隔离 | 理解 Agent 运行时 |
+| 2 | `langchain_new/03_Agent进阶/02_Middleware` | 内置中间件(Summarization/TodoList/SubAgent 等 10 种)、Middleware 类型(@dynamic_prompt/@wrap_model_call/@lifecycle)、request.override() 修改、自定义 Middleware 实现 | 掌握中间件扩展 |
+| 3 | `langchain_new/03_Agent进阶/03_EmailAgent案例` | 自定义鉴权状态(AuthState)、动态工具切换(登录/未登录)、动态提示词切换(多意图)、模拟邮箱操作(登录/收件箱/写信/回复) | 完整 Email Agent 实战 |
+| 4 | `langchain_new/03_Agent进阶/04_MCP` | MCP 协议概念(工具/资源/提示)、Kiwi 航班搜索服务集成、FastMCP 自定义数学计算服务、stdio 传输 | 集成 MCP 工具 |
+| 5 | `langchain_new/03_Agent进阶/05_多Agent` | 婚礼策划案例(Subagent 模式)、航班/场地/歌单专用 Agent + 协调主 Agent、Subagent State 管理、多 Agent 数据聚合 | 构建多 Agent 系统 |
+
+---
+
+### 第十四阶段：RAG 检索增强生成
+
+**目标：** 从零搭建 RAG 应用 — 知识库构建、RAG Agent、RAGAS 评估。
+
+**前置依赖：** 第一阶段完成。
+
+| 步骤 | Notebook | 核心知识点 | 产出 |
+|:----:|----------|-----------|------|
+| 1 | `langchain_new/04_AgenticRAG/00_认识RAG` | RAG 三阶段(索引→检索→生成)、文档加载器、文本分割策略、向量存储与检索器、代码示例 | 理解 RAG 原理 |
+| 2 | `langchain_new/04_AgenticRAG/01_构建知识库` | 结构化知识库构建(教育理论:孔子/孟子/教育功能/名著)、文档分块与向量化、元数据管理 | 构建自定义知识库 |
+| 3 | `langchain_new/04_AgenticRAG/02_RAG Agent` | Agent + RAG 结合、LangGraph ReAct Agent + 检索工具、自定义检索工具、多来源知识路由 | 构建 RAG Agent |
+| 4 | `langchain_new/04_AgenticRAG/03_RAG评估` | RAGAS 评估框架、评估指标(Faithfulness/Relevance/Precision/Recall)、评估数据集构建、LangSmith 集成 | 评估 RAG 质量 |
+
+---
+
 ## 目录结构
 
 ```
@@ -201,6 +266,25 @@ langchain_study/
 │   ├── 08_Deep-Agents-Code/         8篇
 │   └── 09_前端集成/                 4篇
 │
+├── langchain_new/                # LangChain 进阶实战笔记 (13篇)
+│   ├── 01_AI通识与基础/             (占位)
+│   ├── 02_Langchain入门/            (占位)
+│   ├── 03_Agent进阶/                5篇
+│   ├── 04_AgenticRAG/              4篇
+│   └── 05_LangGraph/               4篇
+│
+├── LangGraph/                    # LangGraph 核心概念笔记 (7篇)
+│   ├── 01_核心概念与状态管理
+│   ├── 02_环境搭建与第一个程序
+│   ├── 03_Nodes节点
+│   ├── 04_条件路由示例
+│   ├── 05_ReAct工具调用
+│   ├── 06_多Agent与子图
+│   └── 07_调试与最佳实践
+│
+├── langgraph_new/                # LangGraph 补充练习 (1篇)
+│   └── 01_基础
+│
 ├── .env                          # 环境变量（勿提交）
 ├── .env.example                  # 环境变量示例
 └── README.md                     # 本文件
@@ -216,6 +300,8 @@ langchain_study/
 |------|:------:|----------|
 | **LangChain** (`langchain/`) | 22 篇 | 入门基础/01_概述与理念 + 02_快速入门 |
 | **Deep Agents** (`deepagents/`) | 40 篇 | 核心概念/01_概述 + 02_快速入门 |
+| **LangChain 实战** (`langchain_new/`) | 13 篇 | 03_Agent进阶/01_Runtime |
+| **LangGraph** (`LangGraph/` + `langgraph_new/` + `langchain_new/05_LangGraph`) | 12 篇 | LangGraph/01_核心概念与状态管理 |
 
 ### 按场景查找
 
@@ -230,6 +316,12 @@ langchain_study/
 | 生产部署 | `langchain/10_部署与运维/01_部署与监控`、`deepagents/07_生产部署/01_生产部署` |
 | 添加安全审批 | `langchain/10_部署与运维/02_安全与审批`、`deepagents/04_执行模式/05_人类审批` |
 | 测试评估 Agent | `langchain/09_测试/01_测试`、`deepagents/07_生产部署/02_评估标准` |
+| 学习 LangGraph | `LangGraph/01_核心概念与状态管理`、`langchain_new/05_LangGraph/00_LangGraph` |
+| LangGraph 项目实战 | `langchain_new/05_LangGraph/03_ThinkInLangGraph`（邮件助手完整案例） |
+| 搭建 RAG 应用 | `langchain_new/04_AgenticRAG/00_认识RAG` → `01_构建知识库` → `02_RAG Agent` |
+| RAG 质量评估 | `langchain_new/04_AgenticRAG/03_RAG评估` |
+| 集成 MCP 服务 | `langchain_new/03_Agent进阶/04_MCP`、`deepagents/02_模型与配置/05_MCP集成` |
+| 自定义 Middleware | `langchain_new/03_Agent进阶/02_Middleware`、`langchain/06_中间件/01_中间件` |
 
 ---
 
