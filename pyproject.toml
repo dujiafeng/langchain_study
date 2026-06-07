@@ -20,6 +20,7 @@ dependencies = [
     "pypdf>=6.13.0",
     "mineru-kie-sdk>=0.1.1",
     "langchain-ollama>=1.1.0",
+    "bm25s>=0.3.9",
 ]
 
 [[tool.uv.index]]
